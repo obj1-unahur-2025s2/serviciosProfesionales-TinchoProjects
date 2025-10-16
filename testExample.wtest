@@ -1,9 +1,15 @@
-import example.pepita
+import empresas.*
+import profesionalesYUniversidades.*
 
-describe "group of tests for pepita" {
+describe "Creando Provincias y Universidades" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "Creando Universidades"{
+    const hurlingham = new Universidad(honorarioSugerido = 8800 , provincia = buenosAires)
+    assert.that(hurlingham.provincia() == buenosAires)
+    const sanMartin = new Universidad(honorarioSugerido = 3500 , provincia = buenosAires)
+    assert.that(sanMartin.provincia() == buenosAires)
+    const uncor = new Universidad(honorarioSugerido = 3500 , provincia = corrientes)
+    assert.that(uncor.provincia() == corrientes)
   }
 
 }
