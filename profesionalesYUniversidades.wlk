@@ -1,26 +1,27 @@
 //Clase por tipo de profesional?
 
 class ProfesionalVinculado{
-    const property universidadEstudio = 
-    var contratadoPor = 
-
-    method contratadoPor(empresa){
-        contratadoPor = empresa
-    }
-
+    (const property universidadEstudio = )
+    (var property contratadoPor = null)
+    (const property nombre = )
     method provinciasHabilitadas() = [universidadEstudio.provincia()]
 
     method honorarios() = universidadEstudio.honorarioSugerido()
+
+    override method toString() = self.nombre()
 }
 
 class ProfesionalDelLitoral{
+    (const property nombre = )
     const provinciasHabilitadas = [entreRios, santaFe , corrientes]
     const property honorarios = 3000
+    override method toString() = self.nombre()
 }
 
 
 
 class ProfesionalLibre{
+    (const property nombre = )
     const property universidadEstudio = 
     const provinciasHabilitadas = []
     var honorarios = 3000
@@ -38,6 +39,7 @@ class ProfesionalLibre{
     method inhabilitarProvincia(unaProvincia){
         provinciasHabilitadas.remove(unaProvincia)
     }
+    override method toString() = self.nombre()
 }
 
 class Universidad{
